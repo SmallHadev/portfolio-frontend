@@ -1,0 +1,31 @@
+.batik-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #241300;
+}
+
+.batik-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Animasi dipasang ke rect */
+#animatedRect {
+  animation: moveBatik 18s linear infinite;
+}
+
+@keyframes moveBatik {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    /* Bergerak sejauh 300px (1 kelipatan tile pattern) */
+    transform: translate(-150px, -150px);
+  }
+}

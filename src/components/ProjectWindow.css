@@ -1,0 +1,251 @@
+.window-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid #a0a0a0;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Window */
+.window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: #e9ecef;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Tombol Back / Next */
+.nav-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b0b0b0;
+  background-color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #dbe2ef;
+  border-color: #707070;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.window-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+/* Action Area (Search & View Mode) */
+.window-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-box input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 6px;
+  outline: none;
+  font-size: 0.85rem;
+  width: 130px;
+  transition: all 0.3s ease;
+}
+
+.action-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #dce1e7;
+  border-color: #ccc;
+}
+
+/* Body Layout */
+.window-body {
+  display: flex;
+  height: 420px;
+}
+
+.window-sidebar {
+  width: 140px;
+  background-color: #f0f2f5;
+  border-right: 2px solid #ccc;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 8px 12px;
+  border: 1px solid #c0c0c0;
+  background-color: #e4e7eb;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: #ffffff;
+  border-color: #666;
+  color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.window-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.no-data {
+  text-align: center;
+  color: #888;
+  margin-top: 40px;
+  font-style: italic;
+}
+
+/* Mode Tampilan Large Grid */
+.projects-grid-large {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card-large {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card-large .img-wrapper img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.card-large .card-body {
+  padding: 10px;
+}
+
+.card-large h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+}
+
+.card-large p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+/* Mode Tampilan Detail List */
+.projects-list-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border-bottom: 2px solid #ddd;
+  color: #555;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  background: #ffffff;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.detail-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-name p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.thumb-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Tag Komponen */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background-color: #eef2f7;
+  color: #334e68;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #d9e2ec;
+}

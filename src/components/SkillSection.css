@@ -1,0 +1,202 @@
+.skill-section {
+  width: 100%;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.skill-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+.skill-container {
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* SISI KIRI: SKILL CATEGORIES */
+.skill-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skill-group h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* STYLE TAG SKILL */
+.skill-tag {
+  display: inline-block;
+  background-color: #1a2b3c;
+  color: #d8c28a;
+  border: 1.5px solid #d8c28a;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* KETIKA TAG SKILL DI-HOVER: Diam, Lurus & Membesar */
+.skill-tag:hover {
+  animation-play-state: paused !important;
+  transform: scale(1.15) rotate(0deg) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* SISI KANAN: TOOLS AREA */
+.skill-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.tools-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tool-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* KETIKA TOOL ICON DI-HOVER */
+.tool-item:hover {
+  animation-play-state: paused !important;
+  transform: scale(1.25) rotate(0deg) !important;
+  filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.25));
+  z-index: 10;
+}
+
+/* ----------------------------------
+   ANIMASI MELAYANG ACAK (KEYFRAMES)
+---------------------------------- */
+.float-anim-1 {
+  animation: floatRandom1 4s ease-in-out infinite alternate;
+}
+
+.float-anim-2 {
+  animation: floatRandom2 4.8s ease-in-out infinite alternate;
+}
+
+.float-anim-3 {
+  animation: floatRandom3 3.6s ease-in-out infinite alternate;
+}
+
+.float-anim-4 {
+  animation: floatRandom4 4.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatRandom1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-4deg); }
+  100% { transform: translateY(6px) rotate(3deg); }
+}
+
+@keyframes floatRandom2 {
+  0% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(8px) translateY(-6px) rotate(5deg); }
+  100% { transform: translateX(-5px) translateY(5px) rotate(-3deg); }
+}
+
+@keyframes floatRandom3 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes floatRandom4 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(4deg); }
+  100% { transform: translateY(-8px) rotate(-5deg); }
+}
+
+/* ----------------------------------
+   RUNNING TEXT (MARQUEE BANNER)
+---------------------------------- */
+.marquee-banner.marquee-top {
+  margin-bottom: 80px; /* Jarak antara marquee atas dengan Judul 'Skill' */
+}
+.marquee-banner.marquee-bottom {
+  margin-top: 50px; /* Jarak antara konten Skill dengan marquee bawah */
+}
+.marquee-banner {
+  width: 100%;
+  background-color: #1a2b3c;
+  border-top: 2px solid #d8c28a;
+  border-bottom: 2px solid #d8c28a;
+  overflow: hidden;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d8c28a;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .skill-container {
+    flex-direction: column;
+  }
+  .tools-cloud {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+:root {
+  --bg-color: #f3f2e7;
+  --primary-color: #40657f;
+  --hover-color: #172f3f;
+  --gold-color: #e5b252;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Itim", cursive, sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   1. NAVBAR ALWAYS VISIBLE (ALWAYS ON TOP)
+   ========================================== */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  background-color: #3b6079;
+  padding: 6px 12px;
+  border-radius: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  gap: 12px;
+}
+
+.nav-item {
+  background: transparent;
+  border: 2px solid transparent;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 8px 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  font-weight: 500;
+  outline: none;
+}
+
+.nav-item:hover {
+  color: var(--gold-color) !important;
+  background-color: transparent !important;
+}
+
+/* Tab Aktif Kapsul Gelap + Line Border Emas Sesuai Gambar 1 */
+.nav-item.active {
+  background-color: #172f3f !important;
+  border: 2px solid var(--gold-color) !important;
+  color: var(--gold-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+:root {
+  --bg-color: #f3f2e7;
+  --primary-color: #40657f;
+  --hover-color: #172f3f;
+  --gold-color: #e5b252;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Itim", cursive, sans-serif;
+}
+

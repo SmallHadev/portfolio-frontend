@@ -1,0 +1,142 @@
+/* ==========================================
+   HERO COMPONENT STYLING (Hero.css)
+   ========================================== */
+
+.hero-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 160px 20% 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f3f2e7;
+  overflow: hidden;
+}
+
+/* ------------------------------------------
+   CLASS 1: HERO TEXT CONTAINER 
+   ------------------------------------------ */
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 15;
+}
+
+.hero-text-container .bottom-desc-box {
+  max-width: 480px;
+  text-align: left;
+}
+
+.hero-text-container .bottom-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 8px;
+  margin-top: 15px; /* Menurunkan posisi judul bawah */
+}
+
+.hero-text-container .bottom-desc {
+  font-size: 18px;
+  max-width: 400px;
+  color: #222222;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ------------------------------------------
+   CLASS 2: PORTFOLIO TITLE CONTAINER 
+   ------------------------------------------ */
+.portfolio-title-container {
+  position: relative;
+  width: fit-content; /* Mengunci lebar pas dengan teks portfolio */
+  margin: 0 auto;     /* Tetap di tengah layar */
+  text-align: left;   /* Memastikan tulisan diatasnya rata kiri dengan huruf 'p' */
+}
+
+.portfolio-title-container .top-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: -10px; /* Posisi tepat diatas tulisan portfolio */
+  display: block;
+}
+
+.portfolio-title-container h1 {
+  font-size: clamp(100px, 17vw, 240px); /* Ukuran diperbesar */
+  font-weight: 900;
+  color: #000000;
+  line-height: 0.8;
+  letter-spacing: -4px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+}
+
+.portfolio-title-container .year-tag {
+  font-size: clamp(22px, 3.5vw, 45px);
+  position: absolute;
+  right: -65px;
+  bottom: -10px; /* Diturunkan posisinya */
+  font-weight: bold;
+}
+
+/* ------------------------------------------
+   CLASS 3: GAMBAR CONTAINER 
+   ------------------------------------------ */
+.gambar-container {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-5%, -5%);
+  z-index: 10;
+  pointer-events: none;
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+.gambar-container img {
+  width: 380px;
+  height: auto;
+  display: block;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translate(-50%, -55%);
+  }
+  50% {
+    transform: translate(-50%, -58%);
+  }
+}
+
+/* ------------------------------------------
+   CLASS 4: SOCIAL MEDIA CONTAINER 
+   ------------------------------------------ */
+.social-media-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 15;
+}
+
+.social-media-container .social-icon {
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.social-media-container .social-icon:hover {
+  transform: translateY(-6px) scale(1.15);
+  filter: drop-shadow(0px 6px 12px rgba(201, 164, 76, 0.6));
+}
+
+/* Wrapper Baris Bawah (Kiri Deskripsi & Kanan Sosmed) */
+.bottom-row-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
