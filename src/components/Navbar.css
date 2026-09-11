@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+/* ==========================================
+   ROOT
+   ========================================== */
+
+:root {
+  --bg-color: #f3f2e7;
+  --nav-color: #3b6079;
+  --nav-dark: #172f3f;
+  --gold-color: #e5b252;
+}
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Itim", cursive, sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--bg-color);
+
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   NAVBAR WRAPPER
+   ========================================== */
+
+.navbar-wrapper {
+  position: fixed;
+
+  top: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 9999;
+
+  display: flex;
+
+  justify-content: center;
+
+  width: auto;
+}
+
+/* ==========================================
+   DESKTOP NAVBAR
+   ========================================== */
+
+.desktop-nav-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background-color: var(--nav-color);
+
+  padding: 6px 12px;
+
+  border-radius: 40px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+   DESKTOP NAV ITEM
+   ========================================== */
+
+.nav-item {
+  background: transparent;
+
+  border: 2px solid transparent;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  padding: 8px 32px;
+
+  cursor: pointer;
+
+  transition:
+    all 0.3s ease;
+
+  border-radius: 30px;
+
+  font-weight: 500;
+
+  outline: none;
+}
+
+/* ==========================================
+   DESKTOP HOVER
+   ========================================== */
+
+.nav-item:hover {
+  color: var(--gold-color);
+
+  background-color: transparent;
+}
+
+/* ==========================================
+   DESKTOP ACTIVE
+   ========================================== */
+
+.nav-item.active {
+  background-color: var(--nav-dark);
+
+  border: 2px solid var(--gold-color);
+
+  color: var(--gold-color);
+
+  box-shadow:
+    0 4px 12px
+    rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   MOBILE NAVBAR
+   ========================================== */
+
+.mobile-navbar {
+  display: none;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  /* ========================================
+     WRAPPER
+     ======================================== */
+
+  .navbar-wrapper {
+    position: fixed;
+
+    top: 10px;
+    left: 50%;
+
+    width: 100%;
+
+    transform:
+      translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+
+  /* ========================================
+     HIDE DESKTOP
+     ======================================== */
+
+  .desktop-nav-container {
+    display: none;
+  }
+
+
+  /* ========================================
+     MOBILE NAVBAR
+     ======================================== */
+
+  .mobile-navbar {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+  }
+
+
+  /* ========================================
+     MOBILE BUTTON
+     ======================================== */
+
+  .mobile-nav-button {
+
+    position: relative;
+
+    width: 88%;
+    max-width: 320px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--nav-dark);
+
+    border: 2px solid var(--gold-color);
+
+    border-radius: 40px;
+
+    color: var(--gold-color);
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    box-shadow:
+      0 5px 12px
+      rgba(0, 0, 0, 0.2);
+
+    transition:
+      all 0.3s ease;
+  }
+
+
+  /* ========================================
+     BUTTON OPEN
+     ======================================== */
+
+  .mobile-nav-button.menu-open {
+    border-radius:
+      30px 30px 0 0;
+
+    border-bottom:
+      2px solid transparent;
+
+    background-color:
+      var(--nav-color);
+  }
+
+
+  /* ========================================
+     ARROW BUTTON
+     ======================================== */
+
+  .mobile-arrow {
+
+    position: absolute;
+
+    right: 24px;
+
+    top: 50%;
+
+    transform:
+      translateY(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    color: var(--gold-color);
+
+  }
+
+
+  /* ========================================
+     MOBILE MENU
+     ======================================== */
+
+  .mobile-menu {
+
+    width: 88%;
+    max-width: 320px;
+
+    background-color: var(--nav-color);
+
+    border:
+      2px solid #000000;
+
+    border-top: none;
+
+    border-radius:
+      0 0 40px 40px;
+
+    padding:
+      8px 0 22px;
+
+    box-shadow:
+      0 8px 20px
+      rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+  }
+
+
+  /* ========================================
+     MOBILE MENU ITEM
+     ======================================== */
+
+  .mobile-menu-item {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition:
+      all 0.25s ease;
+
+  }
+
+
+  /* ========================================
+     MENU HOVER
+     ======================================== */
+
+  .mobile-menu-item:hover {
+
+    color: var(--gold-color);
+
+  }
+
+
+  /* ========================================
+     ACTIVE MENU
+     ======================================== */
+
+  .mobile-menu-item.active {
+
+    color: var(--gold-color);
+
+  }
+
+
+  /* ========================================
+     ACTIVE ARROW
+     ======================================== */
+
+  .active-arrow {
+
+    position: absolute;
+
+    right: 30px;
+
+    top: 50%;
+
+    transform:
+      translateY(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    color: var(--gold-color);
+
+  }
+
+}
+
+
+/* ==========================================
+   SMALL PHONE
+   ========================================== */
+
+@media (max-width: 400px) {
+
+  .mobile-nav-button {
+
+    width: 86%;
+
+    max-width: 300px;
+
+    height: 58px;
+
+    font-size: 21px;
+
+  }
+
+  .mobile-arrow {
+
+    right: 22px;
+
+    font-size: 28px;
+
+  }
+
+  .mobile-menu {
+
+    width: 86%;
+
+    max-width: 300px;
+
+    padding-bottom: 18px;
+
+    border-radius:
+      0 0 36px 36px;
+
+  }
+
+  .mobile-menu-item {
+
+    height: 55px;
+
+    font-size: 20px;
+
+  }
+
+  .active-arrow {
+
+    right: 26px;
+
+    font-size: 31px;
+
+  }
+
+}
+
+
+/* ==========================================
+   EXTRA SMALL PHONE
+   ========================================== */
+
+@media (max-width: 350px) {
+
+  .mobile-nav-button {
+
+    width: 84%;
+
+    height: 54px;
+
+    font-size: 20px;
+
+  }
+
+  .mobile-menu {
+
+    width: 84%;
+
+  }
+
+  .mobile-menu-item {
+
+    height: 52px;
+
+    font-size: 19px;
+
+  }
+
+}
