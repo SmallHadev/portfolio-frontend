@@ -40,6 +40,7 @@ export default function SkillSection() {
   ];
 
   const tools = [
+    { name: "Draw.io", icon: "https://cdn.simpleicons.org/diagramsdotnet/F08705" },
     { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
     { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "Android Studio", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" },
@@ -47,8 +48,8 @@ export default function SkillSection() {
     { name: "Godot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" },
     { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
     { name: "CorelDraw", icon: "https://cdn.simpleicons.org/coreldraw/00529B" },
-    { name: "Draw.io", icon: "https://cdn.simpleicons.org/diagramsdotnet/F08705" },
-    { name: "Canva", icon: "https://cdn.simpleicons.org/canva/00C4CC" },
+    { name: "Canva", icon:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" },
+    
   ];
 
   const marqueeText = "i design i build i create • ";
