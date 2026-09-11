@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,28 +7,46 @@ function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // ==========================================
+  // REF UNTUK MENGECEK KLIK DI LUAR NAVBAR
+  // ==========================================
+
+  const navbarRef = useRef(null);
+
+
+  // ==========================================
+  // NAVBAR SCROLL + SCROLL SPY
+  // ==========================================
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
+      const scrollDifference =
+        currentScrollY - lastScrollY;
 
-      // ==========================================
+
+      // ========================================
       // NAVBAR SCROLL
-      // ==========================================
+      // ========================================
 
       if (currentScrollY < 80) {
         setIsVisible(false);
-      } else if (scrollDifference > 40) {
+      }
+
+      else if (scrollDifference > 40) {
         setIsVisible(false);
-      } else if (scrollDifference < -3) {
+      }
+
+      else if (scrollDifference < -3) {
         setIsVisible(true);
       }
 
       setLastScrollY(currentScrollY);
 
-      // ==========================================
+
+      // ========================================
       // SCROLL SPY
-      // ==========================================
+      // ========================================
 
       const sections = [
         "beranda",
@@ -38,12 +56,17 @@ function Navbar() {
         "kontak",
       ];
 
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition =
+        window.scrollY + 200;
+
 
       for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
+
+        const element =
+          document.getElementById(sectionId);
 
         if (element) {
+
           const top = element.offsetTop;
           const height = element.offsetHeight;
 
@@ -54,40 +77,107 @@ function Navbar() {
             setActiveTab(sectionId);
             break;
           }
+
         }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
+
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
+
   }, [lastScrollY]);
 
+
   // ==========================================
-  // NAVIGATION
+  // KLIK DI LUAR NAVBAR
+  // ==========================================
+
+  useEffect(() => {
+
+    const handleClickOutside = (event) => {
+
+      // Jika menu sedang terbuka
+      // dan klik berada di luar navbar
+      if (
+        isMobileMenuOpen &&
+        navbarRef.current &&
+        !navbarRef.current.contains(
+          event.target
+        )
+      ) {
+
+        setIsMobileMenuOpen(false);
+
+      }
+
+    };
+
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+
+
+    return () => {
+
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+
+    };
+
+  }, [isMobileMenuOpen]);
+
+
+  // ==========================================
+  // NAVIGASI
   // ==========================================
 
   const handleNavClick = (id) => {
+
     setActiveTab(id);
+
+    // Setelah memilih menu,
+    // navbar mobile otomatis ditutup
     setIsMobileMenuOpen(false);
 
-    const element = document.getElementById(id);
+
+    const element =
+      document.getElementById(id);
+
 
     if (element) {
+
       element.scrollIntoView({
         behavior: "smooth",
       });
+
     }
+
   };
 
+
   // ==========================================
-  // ACTIVE LABEL
+  // LABEL ACTIVE MOBILE
   // ==========================================
 
   const getActiveLabel = () => {
+
     switch (activeTab) {
+
       case "beranda":
         return "Home";
 
@@ -105,11 +195,16 @@ function Navbar() {
 
       default:
         return "Home";
+
     }
+
   };
 
+
   return (
+
     <div
+      ref={navbarRef}
       className={`navbar-wrapper ${
         isVisible
           ? "navbar-visible"
@@ -122,6 +217,8 @@ function Navbar() {
           ======================================== */}
 
       <nav className="desktop-nav-container">
+
+        {/* HOME */}
 
         <button
           className={`nav-item ${
@@ -136,6 +233,9 @@ function Navbar() {
           Home
         </button>
 
+
+        {/* ABOUT */}
+
         <button
           className={`nav-item ${
             activeTab === "tentang"
@@ -148,6 +248,9 @@ function Navbar() {
         >
           About
         </button>
+
+
+        {/* WORK */}
 
         <button
           className={`nav-item ${
@@ -162,6 +265,9 @@ function Navbar() {
           Work
         </button>
 
+
+        {/* SKILL */}
+
         <button
           className={`nav-item ${
             activeTab === "skill"
@@ -174,6 +280,9 @@ function Navbar() {
         >
           Skill
         </button>
+
+
+        {/* CONTACT */}
 
         <button
           className={`nav-item ${
@@ -197,6 +306,7 @@ function Navbar() {
 
       <div className="mobile-navbar">
 
+
         {/* ======================================
             MOBILE BUTTON
             ====================================== */}
@@ -214,12 +324,14 @@ function Navbar() {
           }
         >
 
+          {/* 
+            TANDA PANAH / V DIHAPUS.
+            SEKARANG HANYA MENAMPILKAN
+            NAMA MENU YANG AKTIF.
+          */}
+
           <span>
             {getActiveLabel()}
-          </span>
-
-          <span className="mobile-arrow">
-            {isMobileMenuOpen ? "‹" : "⌄"}
           </span>
 
         </button>
@@ -233,7 +345,10 @@ function Navbar() {
 
           <div className="mobile-menu">
 
-            {/* HOME */}
+
+            {/* ==================================
+                HOME
+                ================================== */}
 
             <button
               className={`mobile-menu-item ${
@@ -245,17 +360,17 @@ function Navbar() {
                 handleNavClick("beranda")
               }
             >
-              <span>Home</span>
 
-              {activeTab === "beranda" && (
-                <span className="active-arrow">
-                  ‹
-                </span>
-              )}
+              <span>
+                Home
+              </span>
+
             </button>
 
 
-            {/* ABOUT */}
+            {/* ==================================
+                ABOUT
+                ================================== */}
 
             <button
               className={`mobile-menu-item ${
@@ -267,17 +382,17 @@ function Navbar() {
                 handleNavClick("tentang")
               }
             >
-              <span>About</span>
 
-              {activeTab === "tentang" && (
-                <span className="active-arrow">
-                  ‹
-                </span>
-              )}
+              <span>
+                About
+              </span>
+
             </button>
 
 
-            {/* WORK */}
+            {/* ==================================
+                WORK
+                ================================== */}
 
             <button
               className={`mobile-menu-item ${
@@ -289,17 +404,17 @@ function Navbar() {
                 handleNavClick("work")
               }
             >
-              <span>Work</span>
 
-              {activeTab === "work" && (
-                <span className="active-arrow">
-                  ‹
-                </span>
-              )}
+              <span>
+                Work
+              </span>
+
             </button>
 
 
-            {/* SKILL */}
+            {/* ==================================
+                SKILL
+                ================================== */}
 
             <button
               className={`mobile-menu-item ${
@@ -311,17 +426,17 @@ function Navbar() {
                 handleNavClick("skill")
               }
             >
-              <span>Skill</span>
 
-              {activeTab === "skill" && (
-                <span className="active-arrow">
-                  ‹
-                </span>
-              )}
+              <span>
+                Skill
+              </span>
+
             </button>
 
 
-            {/* CONTACT */}
+            {/* ==================================
+                CONTACT
+                ================================== */}
 
             <button
               className={`mobile-menu-item ${
@@ -333,14 +448,13 @@ function Navbar() {
                 handleNavClick("kontak")
               }
             >
-              <span>Contact</span>
 
-              {activeTab === "kontak" && (
-                <span className="active-arrow">
-                  ‹
-                </span>
-              )}
+              <span>
+                Contact
+              </span>
+
             </button>
+
 
           </div>
 
@@ -349,6 +463,7 @@ function Navbar() {
       </div>
 
     </div>
+
   );
 }
 
