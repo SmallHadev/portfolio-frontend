@@ -77,3 +77,33 @@
     max-width: 100%;
   }
 }
+.btn-full-project {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 28px;
+  background-color: #2b4556; /* Warna navy/biru gelap */
+  color: #fff; /* Warna emas/kuning */
+  border: 2px solid #e0b15c;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: fit-content;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-full-project:hover {
+  background-color: #1e3240;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  color: #e0b15c;
+}
+
+/* Penyesuaian Responsif Tombol di HP */
+@media (max-width: 900px) {
+  .btn-full-project {
+    margin-top: 20px;
+  }
+}
