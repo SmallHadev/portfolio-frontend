@@ -82,7 +82,7 @@ function Hero() {
         <div className="social-media-container">
 
           <a
-            href="mailto:email@gmail.com"
+            href="mailto:achmadthoricul@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
@@ -94,7 +94,7 @@ function Hero() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/achmad-thoricul-hadi-ab3600433/"
             target="_blank"
             rel="noreferrer"
           >
@@ -106,7 +106,7 @@ function Hero() {
           </a>
 
           <a
-            href="https://github.com"
+            href="https://github.com/SmallHadev"
             target="_blank"
             rel="noreferrer"
           >
@@ -118,7 +118,7 @@ function Hero() {
           </a>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/ach.thoricul/"
             target="_blank"
             rel="noreferrer"
           >
