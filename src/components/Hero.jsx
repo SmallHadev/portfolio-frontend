@@ -8,29 +8,18 @@ import igIcon from "../assets/Instagram.png";
 
 function Hero() {
   return (
-    <section
-      id="beranda"
-      className="hero-wrapper"
-    >
-
+    <section id="beranda" className="hero-wrapper">
       {/* ======================================
           JUDUL + PORTFOLIO
           ====================================== */}
 
       <div className="portfolio-title-container">
-
-        <span className="top-title">
-          Digital Creative & Developer
-        </span>
+        <span className="top-title">Digital Creative & Developer</span>
 
         <h1>
           portfolio
-
-          <span className="year-tag">
-            2026
-          </span>
+          <span className="year-tag">2026</span>
         </h1>
-
       </div>
 
       {/* ======================================
@@ -38,12 +27,7 @@ function Hero() {
           ====================================== */}
 
       <div className="gambar-container">
-
-        <img
-          src={heroImg}
-          alt="Hero Floating"
-        />
-
+        <img src={heroImg} alt="Hero Floating" />
       </div>
 
       {/* ======================================
@@ -51,28 +35,19 @@ function Hero() {
           ====================================== */}
 
       <div className="bottom-row-wrapper">
-
         {/* ====================================
             DESKRIPSI
             ==================================== */}
 
         <div className="hero-text-container">
-
           <div className="bottom-desc-box">
-
-            <h3 className="bottom-title">
-              Digital Creative & Developer
-            </h3>
+            <h3 className="bottom-title">Digital Creative & Developer</h3>
 
             <p className="bottom-desc">
-              I design, build, and create
-              digital experiences through
-              design, technology, and visual
-              media.
+              I design, build, and create digital experiences through design,
+              technology, and visual media.
             </p>
-
           </div>
-
         </div>
 
         {/* ====================================
@@ -80,17 +55,12 @@ function Hero() {
             ==================================== */}
 
         <div className="social-media-container">
-
           <a
             href="mailto:achmadthoricul@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={emailIcon}
-              alt="Email"
-              className="social-icon"
-            />
+            <img src={emailIcon} alt="Email" className="social-icon" />
           </a>
 
           <a
@@ -98,11 +68,7 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={linkedinIcon}
-              alt="LinkedIn"
-              className="social-icon"
-            />
+            <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
           </a>
 
           <a
@@ -110,11 +76,7 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={githubIcon}
-              alt="GitHub"
-              className="social-icon"
-            />
+            <img src={githubIcon} alt="GitHub" className="social-icon" />
           </a>
 
           <a
@@ -122,17 +84,10 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={igIcon}
-              alt="Instagram"
-              className="social-icon"
-            />
+            <img src={igIcon} alt="Instagram" className="social-icon" />
           </a>
-
         </div>
-
       </div>
-
     </section>
   );
 }
