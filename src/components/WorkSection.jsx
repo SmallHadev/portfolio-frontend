@@ -17,8 +17,8 @@ export default function WorkSection() {
 
           {/* Tombol Download PDF Portofolio */}
           <a
-            href="/Porto-Creative-achmad.pdf"
-            download="Porto-Creative-achmad.pdf"
+            href="/Portofolio-Creative-achmad.pdf"
+            download="Portofolio-Creative-achmad.pdf"
             className="btn-full-project"
           >
             Get a Full Project
